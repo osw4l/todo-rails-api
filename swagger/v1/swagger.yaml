@@ -1,0 +1,62 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/auth/login":
+    post:
+      summary: login authentication
+      responses:
+        '200':
+          description: successful
+  "/auth/register":
+    post:
+      summary: sign_up register
+      responses:
+        '200':
+          description: successful
+  "/todos":
+    get:
+      summary: list todos
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create todo
+      responses:
+        '200':
+          description: successful
+  "/todos/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show todo
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update todo
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update todo
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete todo
+      responses:
+        '200':
+          description: successful
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: 0.0.0.0:3000
